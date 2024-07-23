@@ -32,7 +32,7 @@ INCLUDE_DIRECTORIES(
 	rt-thread/components/drivers/include
 	board
 		day1
-		day1/include
+		day2
 	board/CubeMX_Config/Inc
 	board/ports
 	libraries/HAL_Drivers
@@ -120,8 +120,8 @@ SET(PROJECT_SOURCES
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c
-		day1/include/Hello.h
-		day1/source/Hello.c
+        day1/Hello.h
+		day1/Hello.c
 		day1/mutex_sample.c
 		day1/mailbox_sample.c
 		day1/msgq_sample.c

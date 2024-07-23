@@ -4,6 +4,8 @@ can be referred to **Original_README.MD**
 
 ## Detailed study logs
 
+---
+
 ### Environment Building (2024/7/22) Day 1
 * **Short description**
 > In this day I learned how to build RT-Thread developing environment. However, I still did not receive the official
@@ -14,7 +16,7 @@ Detailed log please refer to `day1/README.md`
 
 ### Environment Building (2024/7/23) Day 2
 * **Short description**
-> In this day I learned how to build RT-Thread developing environment. However, I still did not receive the official
-> board. For continuing study, I  use the building tool Cmake instead of Scones.
+> In this day, I learned how the RT-thread running step by step. This will be my most valuable experience !
+> Also, I learned the Kernel of RT-thread and how to create task by different way.
 
-Detailed log please refer to `day1/README.md`
+Detailed log please refer to `day2/README.md`
