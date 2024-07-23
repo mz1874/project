@@ -1,7 +1,8 @@
-![tools-chain.jpg](..%2Fass%2Fday1%2Ftools-chain.jpg)
 **Below are the detailed steps above how to use the building tool to export Cmake project and how to config Clion**
 
 1- Install the Env building tool
+
+![tools-chain.jpg](..%2Fass%2Fday1%2Ftools-chain.jpg)
 
 2- Open and register the env to system
 
@@ -24,9 +25,11 @@
 8- Open Clion and open the project
 
 9- Config tool-chain
+
 ![tools-chain.jpg](..%2Fass%2Fday1%2Ftools-chain.jpg)
 
 10- Config Open-OCD
+
 ![open-ocd.jpg](..%2Fass%2Fday1%2Fopen-ocd.jpg)
 
 11- As the burning tool is dap-link so the config content is
