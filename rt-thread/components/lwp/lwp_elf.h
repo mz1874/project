@@ -1233,7 +1233,7 @@ typedef struct
 
 /* Legal values for ST_TYPE subfield of st_info (symbol type).  */
 
-#define STT_SPARC_REGISTER	13	/* Global register reserved to app. */
+#define STT_SPARC_REGISTER	13	/* Global register reserved to day1. */
 
 /* Values for Elf64_Ehdr.e_flags.  */
 

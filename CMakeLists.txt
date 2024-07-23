@@ -31,7 +31,8 @@ INCLUDE_DIRECTORIES(
 	rt-thread/libcpu/arm/cortex-m4
 	rt-thread/components/drivers/include
 	board
-	app
+		day1
+		day1/include
 	board/CubeMX_Config/Inc
 	board/ports
 	libraries/HAL_Drivers
@@ -119,7 +120,13 @@ SET(PROJECT_SOURCES
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c
-        app/Hello.h app/Hello.c app/mutex_sample.c app/mailbox_sample.c app/msgq_sample.c app/semaphore_sample.c app/thread_sample.c)
+		day1/include/Hello.h
+		day1/source/Hello.c
+		day1/mutex_sample.c
+		day1/mailbox_sample.c
+		day1/msgq_sample.c
+		day1/semaphore_sample.c
+		day1/thread_sample.c)
 
 LINK_DIRECTORIES(
 )

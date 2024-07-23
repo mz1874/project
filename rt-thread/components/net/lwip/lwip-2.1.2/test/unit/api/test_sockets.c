@@ -768,7 +768,7 @@ START_TEST(test_sockets_recv_after_rst)
   tcpip_thread_poll_one();
   tcpip_thread_poll_one();
 
-  /* issue RST (This is a HACK, don't try this in your own app!) */
+  /* issue RST (This is a HACK, don't try this in your own day1!) */
   sact_sock = lwip_socket_dbg_get_socket(sact);
   fail_unless(sact_sock != NULL);
   if (sact_sock != NULL) {

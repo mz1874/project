@@ -210,7 +210,7 @@ struct snmp_trap_header_lengths
 #define SNMP_MSG_INTERNAL_SET_VALUE    6
 /* Perform SNMP operation on object located externally.
    In theory this could be used for building a proxy agent.
-   Practical use is for an enterprise spc. app. gateway. */
+   Practical use is for an enterprise spc. day1. gateway. */
 #define SNMP_MSG_EXTERNAL_GET_OBJDEF   7
 #define SNMP_MSG_EXTERNAL_GET_VALUE    8
 #define SNMP_MSG_EXTERNAL_SET_TEST     9

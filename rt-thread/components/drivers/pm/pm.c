@@ -385,7 +385,7 @@ static void _pm_change_sleep_mode(struct rt_pm *pm)
     }
     else
     {
-        /* Notify app will enter sleep mode */
+        /* Notify day1 will enter sleep mode */
         if (_pm_notify.notify)
             _pm_notify.notify(RT_PM_ENTER_SLEEP, pm->sleep_mode, _pm_notify.data);
 

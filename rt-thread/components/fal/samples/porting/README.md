@@ -83,7 +83,7 @@ Flash 分区基于 Flash 设备，每个 Flash 设备又可以有 N 个分区，
 #define FAL_PART_TABLE                                                               \
 {                                                                                    \
     {FAL_PART_MAGIC_WORD,        "bl",     "stm32_onchip",         0,   64*1024, 0}, \
-    {FAL_PART_MAGIC_WORD,       "app",     "stm32_onchip",   64*1024,  704*1024, 0}, \
+    {FAL_PART_MAGIC_WORD,       "day1",     "stm32_onchip",   64*1024,  704*1024, 0}, \
     {FAL_PART_MAGIC_WORD, "easyflash", NOR_FLASH_DEV_NAME,         0, 1024*1024, 0}, \
     {FAL_PART_MAGIC_WORD,  "download", NOR_FLASH_DEV_NAME, 1024*1024, 1024*1024, 0}, \
 }

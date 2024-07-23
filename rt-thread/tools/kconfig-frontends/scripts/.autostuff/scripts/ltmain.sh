@@ -10823,7 +10823,7 @@ EOF
 	      case $lib in
 	      *.la)
 		# Only pass preopened files to the pseudo-archive (for
-		# eventual linking with the app. that links it) if we
+		# eventual linking with the day1. that links it) if we
 		# didn't already link the preopened objects directly into
 		# the library:
 		func_basename "$lib"

@@ -51,7 +51,7 @@
  * checks for an IP address string first and converts it if it is valid.
  * gethostbyname() then does a dns_lookup() to see if the name is 
  * already in the table. If so, the IP is returned. If not, a query is 
- * issued and the function returns with a ERR_INPROGRESS status. The app
+ * issued and the function returns with a ERR_INPROGRESS status. The day1
  * using the dns client must then go into a waiting state.
  *
  * Once a hostname has been resolved (or found to be non-existent),

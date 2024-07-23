@@ -9,7 +9,7 @@
  * 2018-11-02     heyuanjie    fix complie error in iar
  * 2021-02-03     lizhirui     add 64-bit arch support and riscv64 arch support
  * 2021-08-26     linzhenxing  add lwp_setcwd\lwp_getcwd
- * 2023-02-20     wangxiaoyao  inv icache before new app startup
+ * 2023-02-20     wangxiaoyao  inv icache before new day1 startup
  */
 
 #include <rthw.h>

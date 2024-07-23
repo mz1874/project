@@ -423,7 +423,7 @@ altcp_mbedtls_handle_rx_appldata(struct altcp_pcb *conn, altcp_mbedtls_state_t *
           /* recv callback needs to return this as the pcb is deallocated */
           return ERR_ABRT;
         }
-        /* we hide all other errors as we retry feeding the pbuf to the app later */
+        /* we hide all other errors as we retry feeding the pbuf to the day1 later */
         return ERR_OK;
       }
     }
