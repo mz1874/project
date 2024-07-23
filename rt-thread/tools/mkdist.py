@@ -276,7 +276,7 @@ def MkDist_Strip(program, BSP_ROOT, RTT_ROOT, Env):
     do_copy_file(os.path.join(RTT_ROOT, 'Kconfig'), os.path.join(rtt_dir_path, 'Kconfig'))
     do_copy_file(os.path.join(RTT_ROOT, 'AUTHORS'), os.path.join(rtt_dir_path, 'AUTHORS'))
     do_copy_file(os.path.join(RTT_ROOT, 'COPYING'), os.path.join(rtt_dir_path, 'COPYING'))
-    do_copy_file(os.path.join(RTT_ROOT, 'README.md'), os.path.join(rtt_dir_path, 'README.md'))
+    do_copy_file(os.path.join(RTT_ROOT, 'Original_README.md'), os.path.join(rtt_dir_path, 'Original_README.md'))
     do_copy_file(os.path.join(RTT_ROOT, 'README_zh.md'), os.path.join(rtt_dir_path, 'README_zh.md'))
 
     print('=> %s' % os.path.join('components', 'libc', 'compilers'))
@@ -358,7 +358,7 @@ def MkDist(program, BSP_ROOT, RTT_ROOT, Env, project_name, project_path):
     do_copy_file(os.path.join(RTT_ROOT, 'Kconfig'), os.path.join(rtt_dir_path, 'Kconfig'))
     do_copy_file(os.path.join(RTT_ROOT, 'AUTHORS'), os.path.join(rtt_dir_path, 'AUTHORS'))
     do_copy_file(os.path.join(RTT_ROOT, 'COPYING'), os.path.join(rtt_dir_path, 'COPYING'))
-    do_copy_file(os.path.join(RTT_ROOT, 'README.md'), os.path.join(rtt_dir_path, 'README.md'))
+    do_copy_file(os.path.join(RTT_ROOT, 'Original_README.md'), os.path.join(rtt_dir_path, 'Original_README.md'))
     do_copy_file(os.path.join(RTT_ROOT, 'README_zh.md'), os.path.join(rtt_dir_path, 'README_zh.md'))
 
     print('Update configuration files...')
