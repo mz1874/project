@@ -24,6 +24,8 @@ SET(CMAKE_EXE_LINKER_FLAGS " -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-a
 SET(CMAKE_CXX_STANDARD 14)
 PROJECT(rtthread C CXX ASM)
 INCLUDE_DIRECTORIES(
+	day1
+	day2
 	applications
 	rt-thread/components/libc/compilers/common/include
 	rt-thread/components/libc/compilers/newlib
@@ -31,8 +33,6 @@ INCLUDE_DIRECTORIES(
 	rt-thread/libcpu/arm/cortex-m4
 	rt-thread/components/drivers/include
 	board
-		day1
-		day2
 	board/CubeMX_Config/Inc
 	board/ports
 	libraries/HAL_Drivers
@@ -58,7 +58,13 @@ ADD_DEFINITIONS(
 )
 
 SET(PROJECT_SOURCES
-	applications/main.c
+	day1/Hello.c
+	day1/msgq_sample.c
+	day1/thread_sample.c
+	day1/mutex_sample.c
+	day1/mailbox_sample.c
+	day1/semaphore_sample.c
+		applications/main.c
 	rt-thread/components/libc/compilers/common/cctype.c
 	rt-thread/components/libc/compilers/common/cstdio.c
 	rt-thread/components/libc/compilers/common/cstdlib.c
@@ -86,10 +92,10 @@ SET(PROJECT_SOURCES
 	libraries/HAL_Drivers/drv_common.c
 	libraries/HAL_Drivers/drv_gpio.c
 	libraries/HAL_Drivers/drv_usart.c
+	rt-thread/components/finsh/msh_parse.c
+	rt-thread/components/finsh/cmd.c
 	rt-thread/components/finsh/msh.c
 	rt-thread/components/finsh/shell.c
-	rt-thread/components/finsh/cmd.c
-	rt-thread/components/finsh/msh_parse.c
 	rt-thread/src/clock.c
 	rt-thread/src/components.c
 	rt-thread/src/device.c
@@ -103,30 +109,24 @@ SET(PROJECT_SOURCES
 	rt-thread/src/scheduler_up.c
 	rt-thread/src/thread.c
 	rt-thread/src/timer.c
-	libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
-	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c
-        day1/Hello.h
-		day1/Hello.c
-		day1/mutex_sample.c
-		day1/mailbox_sample.c
-		day1/msgq_sample.c
-		day1/semaphore_sample.c
-		day1/thread_sample.c)
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+	libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+	)
 
 LINK_DIRECTORIES(
 )
