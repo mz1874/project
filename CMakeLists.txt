@@ -26,6 +26,7 @@ PROJECT(rtthread C CXX ASM)
 INCLUDE_DIRECTORIES(
 	day1
 	day2
+		day3
 	applications
 	rt-thread/components/libc/compilers/common/include
 	rt-thread/components/libc/compilers/newlib
@@ -64,6 +65,9 @@ SET(PROJECT_SOURCES
 	day1/mutex_sample.c
 	day1/mailbox_sample.c
 	day1/semaphore_sample.c
+		day3/semaphore_test.c
+		day3/mutex_test.c
+		day3/event_group.c
 		applications/main.c
 	rt-thread/components/libc/compilers/common/cctype.c
 	rt-thread/components/libc/compilers/common/cstdio.c
@@ -126,7 +130,7 @@ SET(PROJECT_SOURCES
 	libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 	libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
-	)
+		day3/mutex_test.c day3/event_group.c)
 
 LINK_DIRECTORIES(
 )
@@ -137,5 +141,5 @@ LINK_LIBRARIES(
 )
 
 ADD_EXECUTABLE(${CMAKE_PROJECT_NAME}.elf ${PROJECT_SOURCES})
-ADD_CUSTOM_COMMAND(TARGET ${CMAKE_PROJECT_NAME}.elf POST_BUILD 
+ADD_CUSTOM_COMMAND(TARGET ${CMAKE_PROJECT_NAME}.elf POST_BUILD
 COMMAND ${CMAKE_OBJCOPY} -O binary ${CMAKE_PROJECT_NAME}.elf ${CMAKE_PROJECT_NAME}.bin COMMAND ${CMAKE_SIZE} ${CMAKE_PROJECT_NAME}.elf)

@@ -15,9 +15,6 @@
 
 
 int main(void) {
-    while(1){
-        rt_kprintf("Test\r\n");
-        rt_thread_delay(500);
-    }
+
     return 0;
 }

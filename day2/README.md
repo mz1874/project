@@ -118,4 +118,4 @@ static void staticTask(void * parameter)
 
 Effect:
 
-![Effect.jpg](..%2Fass%2Fday2%2FEffect.jpg)
+![thread.jpg](..%2Fass%2Fday2%2Fthread.jpg)![Effect.jpg](..%2Fass%2Fday2%2FEffect.jpg)
