@@ -1,0 +1,20 @@
+import os
+from building import *
+
+# Function to find all .c files in the current directory and subdirectories
+def find_c_files(directory):
+    c_files = []
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith('.c'):
+                c_files.append(os.path.join(root, file))
+    return c_files
+
+cwd = GetCurrentDir()
+CPPPATH = [cwd]
+
+# Automatically find all .c files in the current directory and subdirectories
+src = find_c_files(cwd)
+
+group = DefineGroup("app", src, depend = [''], CPPPATH=CPPPATH)
+Return('group')
