@@ -34,7 +34,8 @@ Detailed log please refer to `day3/README.md`
 
 ### Environment Building (2024/7/24) Day 4~~~~
 * **Short description**
--> In this day, I learnt the hwo to manage a device on RTT, which including how to register it and how to find it and use, and 
--> also. I got a deep understanding of how to implement a driver. Such as SPI adn IIC and etc.
+
+>In this day, I learnt the hwo to manage a device on RTT, which including how to register it and how to find it and use, and 
+>also. I got a deep understanding of how to implement a driver. Such as SPI adn IIC and etc.
 
 Detailed log please refer to `day4/README.md`
