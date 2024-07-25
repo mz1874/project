@@ -9,11 +9,13 @@
 #if defined(BSP_USING_TEST)
 static rt_err_t dev_test_init(rt_device_t dev)
 {
+    rt_kprintf("dev_test_init\r\n");
     return RT_EOK;
 }
 
 static rt_err_t dev_test_open(rt_device_t dev, rt_uint16_t oflag)
 {
+    rt_kprintf("dev_test_open\r\n");
     return RT_EOK;
 }
 
@@ -21,23 +23,27 @@ static rt_err_t dev_test_open(rt_device_t dev, rt_uint16_t oflag)
 
 static rt_err_t dev_test_close(rt_device_t dev)
 {
+    rt_kprintf("dev_test_close\r\n");
     return RT_EOK;
 }
 
 
 static rt_ssize_t dev_test_read(rt_device_t dev, rt_off_t pos, void * buffer , rt_size_t size)
 {
+    rt_kprintf("dev_test_read\r\n");
     return RT_EOK;
 }
 
 static rt_ssize_t dev_test_write(rt_device_t dev, rt_off_t pos, const void *buffer, rt_size_t size)
 {
+    rt_kprintf("dev_test_write\r\n");
     return RT_EOK;
 }
 
 
 static rt_err_t dev_test_control(rt_device_t dev, int cmd, void *args)
 {
+    rt_kprintf("dev_test_control\r\n");
     return RT_EOK;
 }
 

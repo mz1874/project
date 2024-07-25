@@ -331,6 +331,7 @@
 
 /* Onboard Peripheral Drivers */
 
+#define BSP_USING_TEST
 #define BSP_USING_USB_TO_USART
 #define BSP_USING_SPI_FLASH
 /* end of Onboard Peripheral Drivers */
