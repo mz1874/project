@@ -9,6 +9,9 @@ config SOC_STM32F429IG
 
 menu "Onboard Peripheral Drivers"
 
+    config BSP_USING_TEST
+        bool "ENABLE test driver"
+        default n
     config BSP_USING_USB_TO_USART
         bool "Enable USB TO USART (uart1)"
         select BSP_USING_UART
