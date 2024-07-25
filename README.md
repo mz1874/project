@@ -23,7 +23,7 @@ Detailed log please refer to `day2/README.md`
 
 
 
-### Environment Building (2024/7/24) Day 3~~~~
+### Environment Building (2024/7/24) Day 3
 * **Short description**
 > In this day, I learnt how to use semaphore, mutex and event group. For communication, I learnt how to use message 
 > queue and mailbox
@@ -32,7 +32,7 @@ Detailed log please refer to `day3/README.md`
 
 
 
-### Environment Building (2024/7/24) Day 4~~~~
+### Environment Building (2024/7/24) Day 4
 * **Short description**
 
 >In this day, I learnt the hwo to manage a device on RTT, which including how to register it and how to find it and use, and 
