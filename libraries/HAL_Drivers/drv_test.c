@@ -9,12 +9,16 @@
 #if defined(BSP_USING_TEST)
 static rt_err_t dev_test_init(rt_device_t dev)
 {
+    //初始化按键
+    rt_pin_mode(GET_PIN(C,13), PIN_MODE_INPUT_PULLDOWN);
     rt_kprintf("dev_test_init\r\n");
     return RT_EOK;
 }
 
 static rt_err_t dev_test_open(rt_device_t dev, rt_uint16_t oflag)
 {
+    //初始化LED
+    rt_pin_mode(GET_PIN(H,11), PIN_MODE_OUTPUT);
     rt_kprintf("dev_test_open\r\n");
     return RT_EOK;
 }
@@ -28,17 +32,32 @@ static rt_err_t dev_test_close(rt_device_t dev)
 }
 
 
-static rt_ssize_t dev_test_read(rt_device_t dev, rt_off_t pos, void * buffer , rt_size_t size)
+static rt_ssize_t dev_test_read(rt_device_t dev, rt_off_t pos, void *buffer, rt_size_t size)
 {
+    if (size >= sizeof(int)) // Ensure there is enough space in the buffer
+    {
+        int pin_value = rt_pin_read(GET_PIN(C, pos));
+        *((int *)buffer) = pin_value;
+    }
+    else
+    {
+        return -RT_ERROR; // Return an error if the buffer size is not sufficient
+    }
     rt_kprintf("dev_test_read\r\n");
     return RT_EOK;
 }
 
+
 static rt_ssize_t dev_test_write(rt_device_t dev, rt_off_t pos, const void *buffer, rt_size_t size)
 {
+
+    int value = *((int *)buffer);
+    rt_pin_write(GET_PIN(H, 11), (rt_uint8_t)value);
+
     rt_kprintf("dev_test_write\r\n");
     return RT_EOK;
 }
+
 
 
 static rt_err_t dev_test_control(rt_device_t dev, int cmd, void *args)

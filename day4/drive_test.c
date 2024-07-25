@@ -9,13 +9,15 @@ static int test_drive_entry(void *args) {
         rt_kprintf("init failed!");
         return -RT_ERROR;
     }
-
     rt_device_open(dev, RT_DEVICE_OFLAG_RDWR);
     rt_device_control(dev, RT_DEVICE_CTRL_CONFIG, RT_NULL);
-    rt_device_write(dev, 100, RT_NULL, 1024);
-    rt_device_read(dev, 20, RT_NULL, 128);
+    const rt_uint8_t buffer[1] ={0x00};
+    rt_kprintf("read----------------------------------");
+    rt_uint8_t receive = 0x00;
+    rt_device_write(dev, 0, &buffer, sizeof (buffer)/sizeof (rt_uint8_t));
+    rt_device_read(dev, 13, &receive, 128);
     rt_device_close(dev);
-
+    rt_kprintf("buffer--------------------- %d", receive);
     return RT_EOK;
 }
 
